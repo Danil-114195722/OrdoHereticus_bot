@@ -6,3 +6,5 @@ from wordcloud import WordCloud
 from math import log, sqrt
 import pandas as pd
 import numpy as np
+
+mails = pd.read_csv('./spam.csv', encoding='latin-1')
