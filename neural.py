@@ -192,7 +192,7 @@ preds_bow = sc_bow.predict(testData['message'])
 
 
 pm = process_message('I cant pick the phone right now. Pls send a message')
-sc_tf_idf.classify(pm)
+print(sc_tf_idf.classify(pm))
 
-pm = process_message('Congratulations ur awarded $500 ')
+pm = process_message('Congratulations ur awarded $500')
 print(sc_tf_idf.classify(pm))
