@@ -11,11 +11,11 @@ import re
 import constants
 
 # Create labels language
-labels_en = ['не спам', 'спам']
-labels_ru = ['спам', 'не спам']
+labels_en = ['False', 'True']
+labels_ru = ['True', 'False']
 # Read the dataset from CSV
 data_spam_russian = pd.read_csv(f'{constants.PROJECT_PATH}/dataset/spam_russian.csv')
-data_enron = pd.read_csv(f'{constants.PROJECT_PATH}/dataset/enron.csv')
+data_enron = pd.read_csv(f'{constants.PROJECT_PATH}/dataset/shuffle_enron.csv')
 
 # Extract columns for message and label
 enron_messages = data_enron['message'].tolist()
@@ -27,7 +27,7 @@ for i in range(len(enron_messages)):
     enron_messages[i] = re.sub('[^a-zA-Z0-9\s]+', '', enron_messages[i])
 
 messages = [data_spam_russian[column].tolist() for column in message_cols]
-label = [int(i == 'spam') for i in data_spam_russian[label_col]]
+label = [int(i) for i in data_spam_russian[label_col]]
 
 # Tokenizing the messages
 max_features = 2000  # Top most words that will be considered
@@ -39,7 +39,7 @@ tokenizer.fit_on_texts(messages)
 seq = tokenizer.texts_to_sequences(messages)
 
 # Padding to approach all messages to the same length
-max_len = 100  # Defining the maximum length of sentence
+max_len = 500  # Defining the maximum length of sentence
 X = pad_sequences(seq, maxlen=max_len)
 
 tokenizer_en = Tokenizer(num_words=max_features, split=' ')
@@ -49,7 +49,8 @@ X_enron = pad_sequences(seq_enron, maxlen=max_len)
 
 # We glue messages and tags from two datasets
 messages = messages + enron_messages
-label += [int(0) for _ in range(len(enron_messages))]
+labels = [int(j) for j in data_enron['labels']]
+label += labels
 
 # Splitting the dataset into train and test
 test_ratio = 0.25
@@ -75,7 +76,7 @@ model.add(Dense(1, activation='sigmoid'))
 model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
 
 # Train the model
-model.fit(X_train, y_train, epochs=15, batch_size=512, validation_split=0.3)
+model.fit(X_train, y_train, epochs=10, batch_size=512, validation_split=0.3)
 
 # Evaluate the model
 loss, accuracy = model.evaluate(X_test, y_test, verbose=0)

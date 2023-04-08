@@ -4,7 +4,7 @@ from aiogram.utils import executor
 
 from constants import PROJECT_PATH
 from config import token
-
+from neural_network.neural_test import predict_spam
 import string
 from re import findall
 
@@ -42,6 +42,13 @@ async def Сenz_Filter(message: types.Message):
         if findall('[a-z]', word) and findall('[а-я]', word):
             await message.reply("ЗА ИМПЕРАТОРА!!!")
             await message.delete()
+
+
+@dp.message_handler()
+async def spam_filter(message: types.Message):
+    if predict_spam(message):
+        await message.reply('Не спамь!')
+        await message.delete()
 
 
 if __name__ == '__main__':
