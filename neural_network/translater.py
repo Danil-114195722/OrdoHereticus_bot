@@ -21,6 +21,6 @@ def translate_csv(from_file: str, to_file: str) -> None:
 
 if __name__ == '__main__':
     translate_csv(
-        f'{constants.PROJECT_PATH}/dataset/spam.csv',
-        f'{constants.PROJECT_PATH}/dataset/spam_russian.csv'
+        f'{constants.PROJECT_PATH}dataset/spam.csv',
+        f'{constants.PROJECT_PATH}dataset/spam_russian.csv'
     )

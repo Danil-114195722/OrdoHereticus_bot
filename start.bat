@@ -1,8 +1,6 @@
 @echo off
 
-call %~dp0Inquisitor\Scripts\activate
-
-cd %~dp0
+cd %~dp0tg_bot
 
 python bot.py
 

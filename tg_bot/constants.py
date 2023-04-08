@@ -1,7 +1,6 @@
 from os.path import abspath
 from pathlib import Path
 
-# Никитино дерьмо
 # Путь до папки с проектом Windows
 # PROJECT_PATH = ""
 # for i in abspath('constants.py').split("\\")[:-1]:
@@ -16,5 +15,6 @@ from pathlib import Path
 
 # Моё дерьмо
 # путь до папки с проектом "OrdoHereticus_bot"
-PROJECT_PATH = Path(__file__).resolve().parent
+PROJECT_PATH = Path(__file__).resolve().parent.parent
 # print(PROJECT_PATH)
+
