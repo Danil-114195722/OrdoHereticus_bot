@@ -2,10 +2,10 @@ from aiogram import Bot, types
 from aiogram.dispatcher import Dispatcher
 from aiogram.utils import executor
 from config import token
-from constants import PROJECT_PATH
+import constants
 
 badwords = []
-with open (f"{PROJECT_PATH}/tg_bot/cenz.json", "r", encoding="utf-8") as cenz:
+with open(f"{constants.PROJECT_PATH}/tg_bot/cenz.json", "r", encoding="utf-8") as cenz:
    badwords = eval(cenz.read())
 
 bot = Bot(token=token)
@@ -33,4 +33,5 @@ async def Сenz_Filter(message: types.Message):
             await message.delete()
 
 
-executor.start_polling(dp, skip_updates=True)
+if __name__ == '__main__':
+    executor.start_polling(dp)
