@@ -41,7 +41,7 @@ async def main():
     # Создание заголовка
     # async with aiofiles.open(f'{constants.PROJECT_PATH}/dataset/enron.csv', 'a', encoding='utf-8') as csv_file:
     #     writer = csv.writer(csv_file)
-    #     await writer.writerow(['labels', 'message'])
+    #     await writer.writerow(['label', 'message'])
 
     tasks = []
     for ham in os.listdir(DIR_PATH):

@@ -10,7 +10,7 @@ from re import findall
 
 
 badwords = set()
-with open (f"{PROJECT_PATH}/tg_bot/cenz.json", "r", encoding="utf-8") as cenz:
+with open(f"{PROJECT_PATH}/tg_bot/cenz.json", "r", encoding="utf-8") as cenz:
    badwords = set(eval(cenz.read()))
 
 bot = Bot(token=token)
