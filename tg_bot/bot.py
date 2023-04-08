@@ -5,11 +5,11 @@ from aiogram.utils import executor
 from constants import PROJECT_PATH
 from config import token
 
+import string
 
-
-badwords = []
+badwords = set()
 with open ("cenz.json", "r", encoding="utf-8") as cenz:
-   badwords = eval(cenz.read())
+   badwords = set(eval(cenz.read()))
 
 bot = Bot(token=token)
 dp = Dispatcher(bot)
@@ -22,7 +22,8 @@ async def cmd_start(message: types.Message):
 
 @dp.message_handler(commands=["AddWord"])
 async def Add_Сenz_Filter(message: types.Message):
-    badwords.append(message.text.lower()[9:])
+    badwords.add(message.text.lower()[9:]\
+    .translate(str.maketrans("", "", string.punctuation)))
     with open("cenz.json", "w", encoding="utf-8") as jn:
         jn.write(str(badwords))
     await message.reply("Слово " + message.text[9:] + " добавлено в список")
@@ -31,7 +32,7 @@ async def Add_Сenz_Filter(message: types.Message):
 @dp.message_handler()
 async def Сenz_Filter(message: types.Message):
     for i in message.text.lower().split(" "):
-        if i in badwords:
+        if i.translate(str.maketrans("", "", string.punctuation)) in badwords:
             await message.reply("ЗА ИМПЕРАТОРА!!!")
             await message.delete()
 
