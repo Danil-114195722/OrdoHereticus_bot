@@ -8,7 +8,7 @@ from config import token
 
 
 badwords = []
-with open ("cenz.json", "r", encoding="utf-8") as cenz:
+with open (f'{PROJECT_PATH}/tg_bot/cenz.json', "r", encoding="utf-8") as cenz:
    badwords = eval(cenz.read())
 
 bot = Bot(token=token)
@@ -23,15 +23,15 @@ async def cmd_start(message: types.Message):
 @dp.message_handler(commands=["AddWord"])
 async def Add_Сenz_Filter(message: types.Message):
     badwords.append(message.text.lower()[9:])
-    with open("cenz.json", "w", encoding="utf-8") as jn:
+    with open(f'{PROJECT_PATH}/tg_bot/cenz.json', "w", encoding="utf-8") as jn:
         jn.write(str(badwords))
     await message.reply("Слово " + message.text[9:] + " добавлено в список")
 
 
 @dp.message_handler()
 async def Сenz_Filter(message: types.Message):
-    for i in message.text.lower().split(" "):
-        if i in badwords:
+    for word in message.text.lower().split(" "):
+        if word in badwords:
             await message.reply("ЗА ИМПЕРАТОРА!!!")
             await message.delete()
 
