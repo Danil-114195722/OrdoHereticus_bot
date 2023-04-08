@@ -30,7 +30,7 @@ def preprocess_message(text):
         return ' '.join(words)
 
 
-mails = pd.read_csv('./new_spam.csv', encoding='cp1251', on_bad_lines='skip')
+mails = pd.read_csv('new_spam.csv', encoding='cp1251', on_bad_lines='skip')
 
 message = mails['message'].tolist()
 label = mails['label'].tolist()

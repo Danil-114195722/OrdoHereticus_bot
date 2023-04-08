@@ -1,6 +1,8 @@
 numpy
 pandas
 nltk
-translate
+googletrans
 wordcloud
 matplotlib
+aiogram
+tensorflow
