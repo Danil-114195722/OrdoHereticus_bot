@@ -13,7 +13,6 @@ from langdetect.lang_detect_exception import LangDetectException
 
 from data import constants
 
-
 # Create labels language
 labels_en = [False, True]
 labels_ru = [True, False]
