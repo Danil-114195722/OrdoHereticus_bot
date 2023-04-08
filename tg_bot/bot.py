@@ -10,7 +10,7 @@ from re import findall
 
 
 badwords = set()
-with open (f"{PROJECT_PATH}tg_bot/cenz.json", "r", encoding="utf-8") as cenz:
+with open (f"{PROJECT_PATH}/tg_bot/cenz.json", "r", encoding="utf-8") as cenz:
    badwords = set(eval(cenz.read()))
 
 bot = Bot(token=token)
@@ -26,7 +26,7 @@ async def cmd_start(message: types.Message):
 async def Add_Сenz_Filter(message: types.Message):
     badwords.add(message.text.lower()[9:]\
     .translate(str.maketrans("", "", string.punctuation)))
-    with open(f"{PROJECT_PATH}tg_bot/cenz.json", "w", encoding="utf-8") as jn:
+    with open(f"{PROJECT_PATH}/tg_bot/cenz.json", "w", encoding="utf-8") as jn:
         jn.write(str(badwords))
     await message.reply("Слово " + message.text[9:] + " добавлено в список")
 
