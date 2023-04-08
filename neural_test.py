@@ -32,60 +32,11 @@ def preprocess_message(text):
 
 mails = pd.read_csv('./new_spam.csv', encoding='cp1251', on_bad_lines='skip')
 
-message = mails['message'].tolist()
-label = mails['label'].tolist()
 
-# Preprocess the messages
-message = [preprocess_message(text) for text in message]
-
-# Tokenizing the messages
 max_features = 3000  # Top most words that will be considered
 tokenizer = Tokenizer(num_words=max_features, split=' ')
-tokenizer.fit_on_texts(message)
-seq = tokenizer.texts_to_sequences(message)
-
-# Padding to approach all messages to the same length
 max_len = 1000  # Defining the maximum length of sentence
-X = pad_sequences(seq, maxlen=max_len)
 
-# Splitting the dataset into train and test
-test_ratio = 0.25
-indices = np.arange(X.shape[0])
-np.random.shuffle(indices)
-X = X[indices]
-y = np.array(label)[indices]
-
-train_size = int(X.shape[0] * 0.75)
-
-X_train, X_test = X[:train_size], X[train_size:]
-y_train, y_test = y[:train_size], y[train_size:]
-
-# Define the model
-embedding_dim = 32  # Dimension of the token embedding
-model = Sequential()
-model.add(Embedding(max_features, embedding_dim, input_length=X.shape[1]))
-model.add(LSTM(64, dropout=0.1, recurrent_dropout=0.1, return_sequences=True))
-model.add(LSTM(32, dropout=0.2, recurrent_dropout=0.2))
-model.add(Dense(1, activation='sigmoid'))
-
-# Compile the model
-model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
-
-# Define a lambda function to calculate accuracy on the test set after each epoch
-calc_test_accuracy = tf.keras.callbacks.LambdaCallback(
-    on_epoch_end=lambda epoch, logs: print(f' - Test accuracy: {logs["val_accuracy"]*100}%\n'))
-
-# Train the model with the callback to calculate accuracy at the end of each epoch
-model.fit(X_train, y_train, epochs=5, batch_size=64,
-          validation_split=0.2, callbacks=[calc_test_accuracy])
-
-# Evaluate the model on the test set
-loss, accuracy = model.evaluate(X_test, y_test, verbose=0)
-print(f'Test loss: {loss}')
-print(f'Test accuracy: {accuracy*100}%')
-
-# Save the model for later use
-model.save('spam_classifier.h5')
 
 # To classify new messages in the future, load the trained model
 loaded_model = tf.keras.models.load_model('spam_classifier.h5')

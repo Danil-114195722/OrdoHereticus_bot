@@ -6,7 +6,7 @@ from translate import Translator
 translator = Translator(to_lang="ru", from_lang="en")
 print(translator.translate(text="What's Up?"), '\n\n')
 
-csv_en_df = pd.read_csv('spam.csv')
+csv_en_df = pd.read_csv('spam_en.csv')
 
 print(csv_en_df, '\n\n')
 
