@@ -9,8 +9,8 @@ import re
 
 
 # Create labels language
-labels_en = ['False', 'True']
-labels_ru = ['True', 'False']
+labels_en = [False, True]
+labels_ru = [True, False]
 # Read the dataset from CSV
 data_spam_russian = pd.read_csv(f'{constants.PROJECT_PATH}/dataset/spam_russian.csv')
 data_enron = pd.read_csv(f'{constants.PROJECT_PATH}/dataset/enron.csv')
@@ -58,6 +58,6 @@ def predict_spam(message):
     except LangDetectException:
         lang = ''
     if lang == 'ru':
-        return f'{labels_ru[int(round(prediction[0][0]))]}'
+        return labels_ru[int(round(prediction[0][0]))]
     else:
-        return f'{labels_en[int(round(prediction[0][0]))]}'
+        return labels_en[int(round(prediction[0][0]))]

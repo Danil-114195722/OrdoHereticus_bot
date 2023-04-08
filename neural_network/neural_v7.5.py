@@ -11,8 +11,8 @@ import re
 import constants
 
 # Create labels language
-labels_en = ['False', 'True']
-labels_ru = ['True', 'False']
+labels_en = [False, True]
+labels_ru = [True, False]
 # Read the dataset from CSV
 data_spam_russian = pd.read_csv(f'{constants.PROJECT_PATH}/dataset/spam_russian.csv')
 data_enron = pd.read_csv(f'{constants.PROJECT_PATH}/dataset/shuffle_enron.csv')
@@ -76,7 +76,7 @@ model.add(Dense(1, activation='sigmoid'))
 model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
 
 # Train the model
-model.fit(X_train, y_train, epochs=10, batch_size=512, validation_split=0.3)
+model.fit(X_train, y_train, epochs=10, batch_size=128, validation_split=0.2)
 
 # Evaluate the model
 loss, accuracy = model.evaluate(X_test, y_test, verbose=0)

@@ -33,22 +33,18 @@ async def Add_Сenz_Filter(message: types.Message):
 
 @dp.message_handler()
 async def Сenz_Filter(message: types.Message):
-    for i in message.text.lower().split(" "):
-        word = i.translate(str.maketrans("", "", string.punctuation))
-
-        if word in badwords:
-            await message.reply("ЗА ИМПЕРАТОРА!!!" )
-            await message.delete()
-        if findall('[a-z]', word) and findall('[а-я]', word):
-            await message.reply("ЗА ИМПЕРАТОРА!!!")
-            await message.delete()
-
-
-@dp.message_handler()
-async def spam_filter(message: types.Message):
-    if predict_spam(message):
+    if predict_spam(message.text):
         await message.reply('Не спамь!')
         await message.delete()
+    else:
+        for i in message.text.lower().split(" "):
+            word = i.translate(str.maketrans("", "", string.punctuation))
+            if word in badwords:
+                await message.reply("ЗА ИМПЕРАТОРА!!!" )
+                await message.delete()
+            if findall('[a-z]', word) and findall('[а-я]', word):
+                await message.reply("ЗА ИМПЕРАТОРА!!!")
+                await message.delete()
 
 
 if __name__ == '__main__':
