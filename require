@@ -1,4 +1,3 @@
-numpy
 pandas
 nltk
 googletrans
@@ -6,4 +5,5 @@ wordcloud
 matplotlib
 aiogram
 tensorflow
-re
+aiofiles
+langdetect
