@@ -6,6 +6,7 @@ from constants import PROJECT_PATH
 from config import token
 
 import string
+from re import findall
 
 badwords = set()
 with open ("cenz.json", "r", encoding="utf-8") as cenz:
@@ -32,10 +33,14 @@ async def Add_Сenz_Filter(message: types.Message):
 @dp.message_handler()
 async def Сenz_Filter(message: types.Message):
     for i in message.text.lower().split(" "):
-        if i.translate(str.maketrans("", "", string.punctuation)) in badwords:
+        word = i.translate(str.maketrans("", "", string.punctuation))
+
+        if word in badwords:
+            await message.reply("ЗА ИМПЕРАТОРА!!!" )
+            await message.delete()
+        if findall('[a-z]', word) and findall('[а-я]', word):
             await message.reply("ЗА ИМПЕРАТОРА!!!")
             await message.delete()
 
-
 if __name__ == '__main__':
-    executor.start_polling(dp)
+    executor.start_polling(dp, skip_updates=True)
