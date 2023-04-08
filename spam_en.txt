@@ -101,13 +101,13 @@ label,message
 0"""
 0,Please don't text me anymore. I have nothing else to say.
 0,Okay name ur price as long as its legal! Wen can I pick them up? Y u ave x ams xx
-0,I'm still looking for a car to buy. And have not gone 4the driving test yet.
+0,I'm still looking for a car to buy. And have not gone 4the driving test_file yet.
 0,As per your request 'Melle Melle (Oru Minnaminunginte Nurungu Vettam)' has been set as your callertune for all Callers. Press *9 to copy your friends Callertune
 0,"wow. You're right! I didn't mean to do that. I guess once i gave up on boston men and changed my search location to nyc, something changed. Cuz on my signin page it still says boston."
 0,Umma my life and vava umma love you lot dear
 0,Thanks a lot for your wishes on my birthday. Thanks you for making my birthday truly memorable.
 0,"Aight, I'll hit you up when I get some cash"
-0,How would my ip address test that considering my computer isn't a minecraft server
+0,How would my ip address test_file that considering my computer isn't a minecraft server
 0,I know! Grumpy old people. My mom was like you better not be lying. Then again I am always the one to play jokes...
 0,Dont worry. I guess he's busy.
 0,What is the plural of the noun research?
@@ -489,7 +489,7 @@ label,message
 1,"FREE MESSAGE Activate your 500 FREE Text Messages by replying to this message with the word FREE For terms & conditions, visit www.07781482378.com"
 0,Dear reached railway. What happen to you
 0,"Depends on quality. If you want the type i sent boye, faded glory, then about 6. If you want ralphs maybe 0"
-0,I think i've fixed it can you send a test message?
+0,I think i've fixed it can you send a test_file message?
 0,"Sorry man my account's dry or I would, if you want we could trade back half or I could buy some shit with my credit card"
 1,"Congrats! 0 year special cinema pass for 0 is yours. call 09061209465 now! C Suprman V, Matrix3, StarWars3, etc all 4 FREE! bx420-ip4-5we. 150pm. Dont miss out!"
 0,"Sorry,in meeting I'll call later"
@@ -1097,7 +1097,7 @@ label,message
 0,Now only i reached home. . . I am very tired now. . I will come tomorro
 0,Ryder unsold.now gibbs.
 1,Dear Subscriber ur draw 4 �100 gift voucher will b entered on receipt of a correct ans. When was Elvis Presleys Birthday? TXT answer to 80062
-0,Don't fret. I'll buy the ovulation test strips and send them to you. You wont get them til like march. Can you send me your postal address.u'll be alright.Okay.
+0,Don't fret. I'll buy the ovulation test_file strips and send them to you. You wont get them til like march. Can you send me your postal address.u'll be alright.Okay.
 0,NO GIFTS!! You trying to get me to throw myself off a cliff or something?
 0,Been up to ne thing interesting. Did you have a good birthday? When are u wrking nxt? I started uni today.
 0,You busy or can I come by at some point and figure out what we're doing tomorrow
@@ -1347,7 +1347,7 @@ label,message
 0,Were somewhere on Fredericksburg
 0,Que pases un buen tiempo or something like that
 0,Is it ok if I stay the night here? Xavier has a sleeping bag and I'm getting tired
-0,She doesnt need any test.
+0,She doesnt need any test_file.
 0,"Nothing much, chillin at home. Any super bowl plan?"
 1,"FREE2DAY sexy St George's Day pic of Jordan!Txt PIC to 89080 dont miss out, then every wk a saucy celeb!4 more pics c PocketBabe.co.uk 0870241182716 �3/wk"
 0,Bugis oso near wat...
@@ -1707,7 +1707,7 @@ label,message
 0,What can i do? Might accidant tookplace between somewhere ghodbandar rd. Traffic moves slovely. So plz slip &amp; don't worry.
 0,Yun ah.now �_ wkg where?btw if �_ go nus sc. �� wana specialise in wad?
 0,Yes! I am a one woman man! Please tell me your likes and dislikes in bed...
-0,Was doing my test earlier. I appreciate you. Will call you tomorrow.
+0,Was doing my test_file earlier. I appreciate you. Will call you tomorrow.
 0,"How's my loverboy doing ? What does he do that keeps him from coming to his Queen, hmmm ? Doesn't he ache to speak to me ? Miss me desparately ?"
 0,U meet other fren dun wan meet me ah... Muz b a guy rite...
 0,"(No promises on when though, haven't even gotten dinner yet)"
@@ -2103,7 +2103,7 @@ label,message
 0,Oh Howda gud gud.. Mathe en samachara chikku:-)
 0,I thk 530 lor. But dunno can get tickets a not. Wat u doing now?
 0,Audrie lousy autocorrect
-0,Its a site to simulate the test. It just gives you very tough questions to test your readiness.
+0,Its a site to simulate the test_file. It just gives you very tough questions to test_file your readiness.
 0,Anyway seriously hit me up when you're back because otherwise I have to light up with armand and he always has shit and/or is vomiting
 0,I fetch yun or u fetch?
 0,Thank you. I like you as well...
@@ -2178,7 +2178,7 @@ label,message
 0,I'm at work. Please call
 0,get ready to moan and scream :)
 0,Oh k :)why you got job then whats up?
-0,"I don,t think so. You don't need to be going out that late on a school night. ESPECIALLY when the one class you have is the one you missed last wednesday and probably failed a test in on friday"
+0,"I don,t think so. You don't need to be going out that late on a school night. ESPECIALLY when the one class you have is the one you missed last wednesday and probably failed a test_file in on friday"
 0,And popping &lt;#&gt; ibuprofens was no help.
 0,"Babe ! How goes that day ? What are you doing ? Where are you ? I sip my cappuccino and think of you, my love ... I send a kiss to you from across the sea"
 0,Ok.
@@ -2227,7 +2227,7 @@ label,message
 0,"I prefer my free days... Tues, wed, fri oso can... �� ask those workin lor..."
 0,Alrite jod hows the revision goin? Keris bin doin a smidgin. N e way u wanna cum over after college?xx
 0,If you have belive me. Come to my home.
-0,Oh k.k..where did you take test?
+0,Oh k.k..where did you take test_file?
 0,Those were my exact intentions
 0,haha but no money leh... Later got to go for tuition... Haha and looking for empty slots for driving lessons
 0,"Hey... Thk we juz go accordin to wat we discussed yest lor, except no kb on sun... Cos there's nt much lesson to go if we attend kb on sat..."
@@ -3332,7 +3332,7 @@ label,message
 0,Sac will score big hundred.he is set batsman:-)
 0,Send me yetty's number pls.
 0,How much it will cost approx . Per month.
-0,Ok... The theory test? when are �_ going to book? I think it's on 21 may. Coz thought wanna go out with jiayin. But she isnt free
+0,Ok... The theory test_file? when are �_ going to book? I think it's on 21 may. Coz thought wanna go out with jiayin. But she isnt free
 1,"You are being contacted by our dating service by someone you know! To find out who it is, call from a land line 09050000928. PoBox45W2TG150P"
 0,"That's fine, have him give me a call if he knows what he wants or has any questions"
 0,"Sorry, got a late start, we're on the way"
@@ -3388,7 +3388,7 @@ label,message
 0,Ok can...
 0,"Oops - am at my mum's in somerset... Bit far! Back tomo, see you soon x"
 0,So u workin overtime nigpun?
-0,Same as kallis dismissial in 2nd test:-).
+0,Same as kallis dismissial in 2nd test_file:-).
 0,O. Guess they both got screwd
 1,Please CALL 08712402972 immediately as there is an urgent message waiting for you
 0,"I'm in a meeting, call me later at"
@@ -3416,7 +3416,7 @@ label,message
 0,Where do you need to go to get it?
 0,No pic. Please re-send.
 0,He remains a bro amongst bros
-0,Uhhhhrmm isnt having tb test bad when youre sick
+0,Uhhhhrmm isnt having tb test_file bad when youre sick
 0,But i haf enuff space got like 4 mb...
 1,LIFE has never been this much fun and great until you came in. You made it truly special for me. I won't forget you! enjoy @ one gbp/sms
 1,Do you want a new Video phone? 600 anytime any network mins 400 Inclusive Video calls AND downloads 5 per week Free delTOMORROW call 08002888812 or reply NOW
@@ -3803,7 +3803,7 @@ label,message
 1,We tried to contact you re your reply to our offer of a Video Handset? 750 anytime any networks mins? UNLIMITED TEXT? Camcorder? Reply or call 08000930705 NOW
 0,"It's ok, at least armand's still around"
 0,No da. I am happy that we sit together na
-0,Yup song bro. No creative. Neva test quality. He said check review online.
+0,Yup song bro. No creative. Neva test_file quality. He said check review online.
 0,"No dude, its not fake..my frnds got money, thts y i'm reffering u..if u member wit my mail link, u vl be credited  &lt;#&gt; rs and il be getiing  &lt;#&gt; rs..i can draw my acc wen it is  &lt;#&gt; rs.."
 0,Dude while were makin those weirdy brownies my sister made awesome cookies. I took pics.
 1,URGENT! We are trying to contact you. Last weekends draw shows that you have won a �900 prize GUARANTEED. Call 09061701851. Claim code K61. Valid 12hours only
@@ -3969,7 +3969,7 @@ label,message
 0,I was just callin to say hi. Take care bruv!
 1,YOU HAVE WON! As a valued Vodafone customer our computer has picked YOU to win a �150 prize. To collect is easy. Just call 09061743386
 0,Did u turn on the heater? The heater was on and set to &lt;#&gt; degrees.
-0,Thanks for your message. I really appreciate your sacrifice. I'm not sure of the process of direct pay but will find out on my way back from the test tomorrow. I'm in class now. Do have a wonderful day.
+0,Thanks for your message. I really appreciate your sacrifice. I'm not sure of the process of direct pay but will find out on my way back from the test_file tomorrow. I'm in class now. Do have a wonderful day.
 0,"That's the trouble with classes that go well - you're due a dodgey one ��_ Expecting mine tomo! See you for recovery, same time, same place "
 1,Free video camera phones with Half Price line rental for 12 mths and 500 cross ntwk mins 100 txts. Call MobileUpd8 08001950382 or Call2OptOut/674&
 0,WOT U UP 0 J?
@@ -4092,7 +4092,7 @@ label,message
 0,"How are you, my Love ? Are you with your brother ? Time to talk english with him ? *grins* Say : Hey Muhommad, Penny says hello from across the sea"
 1,We tried to call you re your reply to our sms for a video mobile 750 mins UNLIMITED TEXT + free camcorder Reply of call 08000930705 Now
 0,"Hey doc pls I want to get nice t shirt for my hubby nice fiting ones my budget is  &lt;#&gt; k help pls I will load d card abi hw,keep me posted luv. 0 mj"
-0,I remain unconvinced that this isn't an elaborate test of my willpower
+0,I remain unconvinced that this isn't an elaborate test_file of my willpower
 0,"\Life is nothing wen v get everything\"". But \""life is everything wen v miss something \"". Real value of people wil be realized only in their absence.... gud mrng"""
 0,how are you? I miss you!
 0,I ain't answerin no phone at what is actually a pretty reasonable hour but I'm sleepy
@@ -4266,7 +4266,7 @@ label,message
 0,"Den only weekdays got special price... Haiz... Cant eat liao... Cut nails oso muz wait until i finish drivin wat, lunch still muz eat wat... "
 0,She just broke down a list of reasons why nobody's in town and I can't tell if she's being sarcastic or just faggy
 0, &lt;DECIMAL&gt; m but its not a common car here so its better to buy from china or asia. Or if i find it less expensive. I.ll holla
-0,The greatest test of courage on earth is to bear defeat without losing heart....gn tc
+0,The greatest test_file of courage on earth is to bear defeat without losing heart....gn tc
 0,SORRY IM STIL FUCKED AFTER LAST NITE WENT TOBED AT 430 GOT UP 4 WORK AT 630
 0,Hey so whats the plan this sat?
 0,Beauty sleep can help ur pimples too.
@@ -4391,7 +4391,7 @@ label,message
 0,"see you then, we're all christmassy here!"
 0,"K I'm ready,  &lt;#&gt; ?"
 0,"Do you know why god created gap between your fingers..? So that, One who is made for you comes &amp; fills those gaps by holding your hand with LOVE..!"
-0,The greatest test of courage on earth is to bear defeat without losing heart....gn tc
+0,The greatest test_file of courage on earth is to bear defeat without losing heart....gn tc
 0,what are your new years plans?
 1,RECPT 0/3. You have ordered a Ringtone. Your order is being processed...
 0,Baaaaaaaabe! Wake up ! I miss you ! I crave you! I need you!
@@ -4738,7 +4738,7 @@ label,message
 0,Oh k:)after that placement there ah?
 0,"Not for possession, especially not first offense"
 0,"Nt only for driving even for many reasons she is called BBD..thts it chikku, then hw abt dvg cold..heard tht vinobanagar violence hw is the condition..and hw ru ? Any problem?"
-0,I bought the test yesterday. Its something that lets you know the exact day u ovulate.when will get 2u in about 0 to 3wks. But pls pls dont fret. I know u r worried. Pls relax. Also is there anything in ur past history u need to tell me?
+0,I bought the test_file yesterday. Its something that lets you know the exact day u ovulate.when will get 2u in about 0 to 3wks. But pls pls dont fret. I know u r worried. Pls relax. Also is there anything in ur past history u need to tell me?
 0,We have pizza if u want
 0,"I keep seeing weird shit and bein all \woah\"" then realising it's actually reasonable and I'm all \""oh\"""""
 0,Many more happy returns of the day. I wish you happy birthday.
@@ -4854,7 +4854,7 @@ label,message
 0,Gain the rights of a wife.dont demand it.i am trying as husband too.Lets see
 0,I liked your new house
 0,I'm fine. Hope you are also
-0,"Also north carolina and texas atm, you would just go to the gre site and pay for the test results to be sent."
+0,"Also north carolina and texas atm, you would just go to the gre site and pay for the test_file results to be sent."
 0,Same to u...
 0,yes baby! I need to stretch open your pussy!
 0,Thanks  and ! Or bomb and date as my phone wanted to say!
@@ -5360,7 +5360,7 @@ label,message
 0,Tell me something. Thats okay.
 0,Ok
 0,Hmm. Shall i bring a bottle of wine to keep us amused? Just joking! I'll still bring a bottle. Red or white? See you tomorrow
-0,This is ur face test ( 0 0 3 4 5 6 7 8 9  &lt;#&gt;  ) select any number i will tell ur face astrology.... am waiting. quick reply...
+0,This is ur face test_file ( 0 0 3 4 5 6 7 8 9  &lt;#&gt;  ) select any number i will tell ur face astrology.... am waiting. quick reply...
 0,"Hey, iouri gave me your number, I'm wylie, ryan's friend"
 0,Yep get with the program. You're slacking.
 0,I'm in inside office..still filling forms.don know when they leave me.

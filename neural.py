@@ -9,7 +9,7 @@ import pandas as pd
 import numpy as np
 import re
 
-mails = pd.read_csv('./spam.csv', encoding='latin-1')
+mails = pd.read_csv('spam_en.csv', encoding='latin-1')
 
 totalMails = mails['message'].shape[0]
 trainIndex, testIndex = list(), list()
