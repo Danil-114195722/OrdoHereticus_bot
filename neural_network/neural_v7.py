@@ -14,20 +14,14 @@ import constants
 labels_en = ['не спам', 'спам']
 labels_ru = ['спам', 'не спам']
 # Read the dataset from CSV
-data_spam_russian = pd.read_csv(f'{constants.PROJECT_PATH}/dataset/spam_russian.csv')
-data_enron = pd.read_csv(f'{constants.PROJECT_PATH}/dataset/enron.csv')
+data = pd.read_csv(f'{constants.PROJECT_PATH}/dataset/spam_russian.csv')
 
 # Extract columns for message and label
-enron_messages = data_enron['message'].tolist()
 message_cols = ['message', 'message_2']
 label_col = 'label'
-# We clear the text of messages from HTML tags using regular expressions
-for i in range(len(enron_messages)):
-    enron_messages[i] = re.sub('<[^>]*>', '', enron_messages[i])
-    enron_messages[i] = re.sub('[^a-zA-Z0-9\s]+', '', enron_messages[i])
 
-messages = [data_spam_russian[column].tolist() for column in message_cols]
-label = [int(i == 'spam') for i in data_spam_russian[label_col]]
+messages = [data[column].tolist() for column in message_cols]
+label = [int(i == 'spam') for i in data[label_col]]
 
 # Tokenizing the messages
 max_features = 2000  # Top most words that will be considered
@@ -41,15 +35,6 @@ seq = tokenizer.texts_to_sequences(messages)
 # Padding to approach all messages to the same length
 max_len = 100  # Defining the maximum length of sentence
 X = pad_sequences(seq, maxlen=max_len)
-
-tokenizer_en = Tokenizer(num_words=max_features, split=' ')
-tokenizer_en.fit_on_texts(enron_messages)
-seq_enron = tokenizer_en.texts_to_sequences(enron_messages)
-X_enron = pad_sequences(seq_enron, maxlen=max_len)
-
-# We glue messages and tags from two datasets
-messages = messages + enron_messages
-label += [int(0) for _ in range(len(enron_messages))]
 
 # Splitting the dataset into train and test
 test_ratio = 0.25
