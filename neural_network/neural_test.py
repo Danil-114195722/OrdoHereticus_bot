@@ -4,6 +4,7 @@ import numpy as np
 import pandas as pd
 import tensorflow as tf
 from nltk.corpus import stopwords
+import constants
 from keras.models import Sequential
 from keras.utils import pad_sequences
 from keras.preprocessing.text import Tokenizer
@@ -25,12 +26,9 @@ def preprocess_message(text):
         text = re.sub('<[^>]*>', '', text)  # Remove HTML tags if any
         text = re.sub('[^а-яё0-9\s]', '', text)  # Keep only alphanumeric characters and spaces
         text = text.lower()  # Convert to lower case
-        words = text.split()
+        words = nltk.word_tokenize(text)
         words = [word for word in words if word not in stopwords.words('russian')]  # Remove stop words
         return ' '.join(words)
-
-
-mails = pd.read_csv('../dataset/new_spam.csv', encoding='cp1251', on_bad_lines='skip')
 
 
 max_features = 3000  # Top most words that will be considered
@@ -39,7 +37,7 @@ max_len = 1000  # Defining the maximum length of sentence
 
 
 # To classify new messages in the future, load the trained model
-loaded_model = tf.keras.models.load_model('spam_classifier.h5')
+loaded_model = tf.keras.models.load_model(f'{constants.PROJECT_PATH}/neural_network/spam_classifier.h5')
 
 
 # Then preprocess the message and classify it

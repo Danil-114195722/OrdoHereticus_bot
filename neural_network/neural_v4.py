@@ -6,8 +6,9 @@ import tensorflow as tf
 from nltk.corpus import stopwords
 from keras.models import Sequential
 from keras.utils import pad_sequences
+import constants
 from keras.preprocessing.text import Tokenizer
-from keras.layers import Dense, LSTM, Embedding, Dropout
+from keras.layers import Dense, LSTM, Embedding
 
 
 # Preprocess message depending on the language
@@ -25,12 +26,12 @@ def preprocess_message(text):
         text = re.sub('<[^>]*>', '', text)  # Remove HTML tags if any
         text = re.sub('[^а-яё0-9\s]', '', text)  # Keep only alphanumeric characters and spaces
         text = text.lower()  # Convert to lower case
-        words = text.split()
+        words = nltk.word_tokenize(text)
         words = [word for word in words if word not in stopwords.words('russian')]  # Remove stop words
         return ' '.join(words)
 
 
-mails = pd.read_csv('../dataset/new_spam.csv', encoding='cp1251', on_bad_lines='skip')
+mails = pd.read_csv(f'{constants.PROJECT_PATH}/dataset/new_spam.csv', encoding='cp1251', on_bad_lines='skip')
 
 message = mails['message'].tolist()
 label = mails['label'].tolist()

@@ -24,6 +24,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="\dataset\spam_russian.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="\new_data_2.csv">
           <value>
             <Attribute>
