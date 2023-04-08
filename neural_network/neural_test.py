@@ -1,19 +1,22 @@
-from langdetect.lang_detect_exception import LangDetectException
+import re
+import pandas as pd
+
+import tensorflow as tf
 from keras.preprocessing.text import Tokenizer
 from keras.utils import pad_sequences
-import tensorflow as tf
-import pandas as pd
+
 import langdetect
-import constants
-import re
+from langdetect.lang_detect_exception import LangDetectException
+
+from data.constants import PROJECT_PATH
 
 
 # Create labels language
 labels_en = [False, True]
 labels_ru = [True, False]
 # Read the dataset from CSV
-data_spam_russian = pd.read_csv(f'{constants.PROJECT_PATH}/dataset/spam_russian.csv')
-data_enron = pd.read_csv(f'{constants.PROJECT_PATH}/dataset/enron.csv')
+data_spam_russian = pd.read_csv(f'{PROJECT_PATH}/dataset/spam_russian.csv')
+data_enron = pd.read_csv(f'{PROJECT_PATH}/dataset/enron.csv')
 
 # Extract columns for message and label
 enron_messages = data_enron['message'].tolist()
@@ -41,7 +44,7 @@ max_len = 500  # Defining the maximum length of sentence
 X = pad_sequences(seq, maxlen=max_len)
 
 # To classify new messages in the future, load the trained model
-loaded_model = tf.keras.models.load_model(f'{constants.PROJECT_PATH}/neural_network/spam_classifier.h5')
+loaded_model = tf.keras.models.load_model(f'{PROJECT_PATH}/neural_network/spam_classifier.h5')
 
 
 def predict_spam(message):

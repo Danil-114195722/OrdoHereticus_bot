@@ -1,6 +1,6 @@
 import pandas as pd
 
-from constants import PROJECT_PATH
+from data.constants import PROJECT_PATH
 
 
 csv_from = f"{PROJECT_PATH}/dataset/enron.csv"

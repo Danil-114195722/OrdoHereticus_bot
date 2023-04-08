@@ -1,12 +1,13 @@
+import string
+from re import findall
+
 from aiogram import Bot, types
 from aiogram.dispatcher import Dispatcher
 from aiogram.utils import executor
 
-from constants import PROJECT_PATH
 from config import token
+from data.constants import PROJECT_PATH
 from neural_network.neural_test import predict_spam
-import string
-from re import findall
 
 
 badwords = set()
@@ -23,29 +24,40 @@ async def cmd_start(message: types.Message):
 
 
 @dp.message_handler(commands=["AddWord"])
-async def Add_Сenz_Filter(message: types.Message):
-    badwords.add(message.text.lower()[9:]\
-    .translate(str.maketrans("", "", string.punctuation)))
+async def add_cenz_filter(message: types.Message):
+    badwords.add(message.text.lower()[9:].translate(str.maketrans("", "", string.punctuation)))
+
     with open(f"{PROJECT_PATH}/tg_bot/cenz.json", "w", encoding="utf-8") as jn:
         jn.write(str(badwords))
-    await message.reply("Слово " + message.text[9:] + " добавлено в список")
+    await message.reply(f'Слово "{message.text[9:]}" добавлено в список')
 
 
 @dp.message_handler()
-async def Сenz_Filter(message: types.Message):
-    if predict_spam(message.text):
-        await message.reply('Не спамь!')
-        await message.delete()
-    else:
-        for i in message.text.lower().split(" "):
-            word = i.translate(str.maketrans("", "", string.punctuation))
-            if word in badwords:
-                await message.reply("ЗА ИМПЕРАТОРА!!!" )
-                await message.delete()
-            if findall('[a-z]', word) and findall('[а-я]', word):
-                await message.reply("ЗА ИМПЕРАТОРА!!!")
-                await message.delete()
+async def cenz_filter(message: types.Message):
+    need_ai = True
+
+    for dirty_word in message.text.lower().split(" "):
+        clear_word = dirty_word.translate(str.maketrans("", "", string.punctuation))
+        if clear_word in badwords:
+            await message.reply("Выражайся культурно!!!" )
+            await message.delete()
+
+            need_ai = False
+            break
+
+        if findall('[a-z]', clear_word) and findall('[а-я]', clear_word):
+            await message.reply("Выражайся культурно!!!")
+            await message.delete()
+
+            need_ai = False
+            break
+
+    if need_ai:
+        if predict_spam(message.text):
+            await message.reply('Не спамь!!!')
+            await message.delete()
 
 
 if __name__ == '__main__':
-    executor.start_polling(dp, skip_updates=True)
+    # executor.start_polling(dp, skip_updates=True)
+    executor.start_polling(dp)

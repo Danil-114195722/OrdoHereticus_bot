@@ -1,14 +1,18 @@
+import re
+import numpy as np
+import pandas as pd
+
 import tensorflow as tf
 from keras.layers import Dense, LSTM, Embedding
 from keras.models import Sequential
 from keras.preprocessing.text import Tokenizer
 from keras.utils import pad_sequences
+
 import langdetect
 from langdetect.lang_detect_exception import LangDetectException
-import pandas as pd
-import numpy as np
-import re
-import constants
+
+from data import constants
+
 
 # Create labels language
 labels_en = [False, True]

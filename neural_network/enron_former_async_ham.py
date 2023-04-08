@@ -1,14 +1,15 @@
 import os
 import csv
+
 import asyncio
 import aiofiles
 
 from httpcore._exceptions import ReadTimeout
 from googletrans import Translator
-import constants
 
+from data.constants import PROJECT_PATH
 
-DIR_PATH = f'{constants.PROJECT_PATH}/dataset/enron/ham'
+DIR_PATH = f'{PROJECT_PATH}/dataset/enron/ham'
 TRANSLATOR = Translator()
 
 
@@ -18,7 +19,7 @@ async def add_en_ru(ham):
     async with aiofiles.open(f"{DIR_PATH}/{ham}", 'r') as ham_file:
         file_text = await ham_file.read()
 
-        async with aiofiles.open(f'{constants.PROJECT_PATH}/dataset/enron.csv', 'a', encoding='utf-8') as csv_file:
+        async with aiofiles.open(f'{PROJECT_PATH}/dataset/enron.csv', 'a', encoding='utf-8') as csv_file:
             try:
                 attempts = 0
                 while attempts <= 5:
@@ -38,7 +39,7 @@ async def add_en_ru(ham):
 
 async def main():
     # Создание заголовка
-    async with aiofiles.open(f'{constants.PROJECT_PATH}/dataset/enron.csv', 'a', encoding='utf-8') as csv_file:
+    async with aiofiles.open(f'{PROJECT_PATH}/dataset/enron.csv', 'a', encoding='utf-8') as csv_file:
         writer = csv.writer(csv_file)
         await writer.writerow(['label', 'message'])
 
