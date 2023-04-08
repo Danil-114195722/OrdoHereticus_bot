@@ -1,6 +1,7 @@
 import pandas as pd
 from googletrans import Translator
-import constants
+from tg_bot import constants
+
 
 df = pd.read_csv(f'{constants.PROJECT_PATH}/dataset/spam.csv', encoding='cp1251')
 translator = Translator()
