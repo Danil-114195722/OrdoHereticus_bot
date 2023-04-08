@@ -55,32 +55,3 @@ def predict_spam(message):
         return f'{labels_ru[int(round(prediction[0][0]))]}'
     else:
         return f'{labels_en[int(round(prediction[0][0]))]}'
-
-
-# Example usage:
-forecast = predict_spam('Поздравляем, Вы выиграли бесплатную поездку на Гавайи!')
-print(forecast)  # Output: Спам с вероятностью 98.51%
-
-forecast = predict_spam('Привет, как ты поживаешь? Давно не виделись!')
-print(forecast)  # Output: Не спам с вероятностью 4.99%
-
-forecast = predict_spam('Вы выиграли 3 миллиона долларов! Ответьте на это письмо, чтобы получить свой приз')
-print(forecast)  # Output: Спам с вероятностью 97.8%
-
-forecast = predict_spam('ПОБЕДИТЕЛЬ!! Как ценный клиент сети, вы были выбраны для получения приза в размере 900 фунтов'
-                        ' стерлингов! Чтобы подать заявку, позвоните по номеру 09061701461. '
-                        'Код заявки KL341. Действует только 12 часов.')
-print(forecast)  # Output: спам с вероятностью 0.34%
-
-forecast = predict_spam("You won three million dollars in cash, do you want to take it back!")
-print(forecast)  # Output: Spam
-
-forecast = predict_spam("Free entry in 2 a wkly comp to win FA Cup final tkts 21st May 2005. Text FA to 87121 to "
-                        "receive entry question(std txt rate)T&C's apply 08452810075over18's")
-print(forecast)  # Output: Spam
-
-forecast = predict_spam("Congratulations, you have won a free trip to Hawaii!")
-print(forecast)  # Output: Spam
-
-forecast = predict_spam("Hi John, how are you doing today?")
-print(forecast)  # Output: Ham
