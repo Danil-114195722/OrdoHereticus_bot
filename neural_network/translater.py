@@ -1,6 +1,6 @@
 import pandas as pd
 from googletrans import Translator
-from tg_bot import constants
+from OrdoHereticus_bot import constants
 
 
 df = pd.read_csv(f'{constants.PROJECT_PATH}/dataset/spam.csv', encoding='cp1251')
