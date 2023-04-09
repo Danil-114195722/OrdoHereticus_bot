@@ -31,7 +31,7 @@ async def anti_flood(message: types.Message, *args, **kwargs):
 @dp.message_handler(commands = ["start", "help"])
 @dp.throttled(anti_flood, rate=2)
 async def cmd_start(message: types.Message):
-    await message.answer("Бот работает")
+    await message.answer("Сейчас Я умею определять и удалять спам\nВот мои команды:\n/AddWord - добавить слово в черный список\n/help /start - повторить это сообщение")
 
 
 @dp.message_handler(commands=["AddWord"])
