@@ -12,7 +12,7 @@ from neural_network.neural_test import predict_spam
 
 
 # путь до папки с проектом "OrdoHereticus_bot"
-PROJECT_PATH = Path(__file__).resolve().parent.parent
+PROJECT_PATH = Path(__file__).resolve().parent
 
 badwords = set()
 with open(f"{PROJECT_PATH}/tg_bot/cenz.json", "r", encoding="utf-8") as cenz:
@@ -31,7 +31,8 @@ async def anti_flood(message: types.Message, *args, **kwargs):
 @dp.message_handler(commands = ["start", "help"])
 @dp.throttled(anti_flood, rate=2)
 async def cmd_start(message: types.Message):
-    await message.answer("Бот работает")
+    await message.answer('''Сейчас Я умею определять и удалять спам\nВот мои команды:
+/AddWord - добавить слово в черный список\n/help /start - повторить это сообщение''')
 
 
 @dp.message_handler(commands=["AddWord"])
