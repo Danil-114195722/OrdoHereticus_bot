@@ -1,5 +1,6 @@
 import os
 import csv
+from pathlib import Path
 
 import asyncio
 import aiofiles
@@ -7,8 +8,9 @@ import aiofiles
 from httpcore._exceptions import ReadTimeout
 from googletrans import Translator
 
-from data.constants import PROJECT_PATH
 
+# путь до папки с проектом "OrdoHereticus_bot"
+PROJECT_PATH = Path(__file__).resolve().parent.parent
 
 DIR_PATH = f'{PROJECT_PATH}/dataset/enron/spam'
 TRANSLATOR = Translator()

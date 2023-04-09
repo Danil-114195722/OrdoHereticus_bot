@@ -1,7 +1,9 @@
 import pandas as pd
+from pathlib import Path
 
-from data.constants import PROJECT_PATH
 
+# путь до папки с проектом "OrdoHereticus_bot"
+PROJECT_PATH = Path(__file__).resolve().parent.parent
 
 csv_from = f"{PROJECT_PATH}/dataset/enron.csv"
 csv_to = f"{PROJECT_PATH}/dataset/shuffle_enron.csv"

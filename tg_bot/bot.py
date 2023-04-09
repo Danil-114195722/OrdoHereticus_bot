@@ -1,5 +1,6 @@
 import string
 from re import findall
+from pathlib import Path
 
 from aiogram import Bot, types
 from aiogram.dispatcher import Dispatcher
@@ -7,9 +8,11 @@ from aiogram.utils import executor
 from aiogram.contrib.fsm_storage.memory import MemoryStorage
 
 from config import token
-from data.constants import PROJECT_PATH
 from neural_network.neural_test import predict_spam
 
+
+# путь до папки с проектом "OrdoHereticus_bot"
+PROJECT_PATH = Path(__file__).resolve().parent.parent
 
 badwords = set()
 with open(f"{PROJECT_PATH}/tg_bot/cenz.json", "r", encoding="utf-8") as cenz:

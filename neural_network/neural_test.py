@@ -1,6 +1,7 @@
 import re
 import numpy as np
 import pandas as pd
+from pathlib import Path
 
 import tensorflow as tf
 from keras.preprocessing.text import Tokenizer
@@ -9,13 +10,15 @@ from keras.utils import pad_sequences
 import langdetect
 from langdetect.lang_detect_exception import LangDetectException
 
-from data import constants
+
+# путь до папки с проектом "OrdoHereticus_bot"
+PROJECT_PATH = Path(__file__).resolve().parent.parent
 
 # Create labels language
 labels_en = [False, True]
 labels_ru = [True, False]
 
-data_spam_russian = pd.read_csv(f'{constants.PROJECT_PATH}/dataset/enron.csv')
+data_spam_russian = pd.read_csv(f'{PROJECT_PATH}/dataset/enron.csv')
 
 message = data_spam_russian['message'].tolist()
 label = data_spam_russian['labels'].tolist()
@@ -38,7 +41,7 @@ X = X[indices]
 y = np.array(label)[indices]
 
 # To classify new messages in the future, load the trained model
-loaded_model = tf.keras.models.load_model(f'{constants.PROJECT_PATH}/neural_network/spam_classifier.h5')
+loaded_model = tf.keras.models.load_model(f'{PROJECT_PATH}/neural_network/spam_classifier.h5')
 
 
 def predict_spam(notification):
