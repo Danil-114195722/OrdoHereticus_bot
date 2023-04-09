@@ -4,6 +4,7 @@ from re import findall
 from aiogram import Bot, types
 from aiogram.dispatcher import Dispatcher
 from aiogram.utils import executor
+from aiogram.contrib.fsm_storage.memory import MemoryStorage
 
 from config import token
 from data.constants import PROJECT_PATH
@@ -15,15 +16,23 @@ with open(f"{PROJECT_PATH}/tg_bot/cenz.json", "r", encoding="utf-8") as cenz:
    badwords = set(eval(cenz.read()))
 
 bot = Bot(token=token)
-dp = Dispatcher(bot)
+storage = MemoryStorage()
+dp = Dispatcher(bot, storage=storage)
+
+
+# Функция для защиты от флуда (пометка это бот для офиц.деловых групп)
+async def anti_flood(message: types.Message, *args, **kwargs):
+    await message.delete()
 
 
 @dp.message_handler(commands = ["start", "help"])
+@dp.throttled(anti_flood, rate=2)
 async def cmd_start(message: types.Message):
     await message.answer("Бот работает")
 
 
 @dp.message_handler(commands=["AddWord"])
+@dp.throttled(anti_flood, rate=2)
 async def add_cenz_filter(message: types.Message):
     badwords.add(message.text.lower()[9:].translate(str.maketrans("", "", string.punctuation)))
 
@@ -33,6 +42,7 @@ async def add_cenz_filter(message: types.Message):
 
 
 @dp.message_handler()
+@dp.throttled(anti_flood, rate=2)
 async def cenz_filter(message: types.Message):
     need_ai = True
 
