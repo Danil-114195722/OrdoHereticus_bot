@@ -20,7 +20,7 @@ storage = MemoryStorage()
 dp = Dispatcher(bot, storage=storage)
 
 
-# Функция для защиты от флуда (пометка это бот для офиц.деловых групп)
+# Функция для защиты от флуда
 async def anti_flood(message: types.Message, *args, **kwargs):
     await message.delete()
 
