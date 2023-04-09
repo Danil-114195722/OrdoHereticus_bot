@@ -7,7 +7,7 @@ from aiogram.dispatcher import Dispatcher
 from aiogram.utils import executor
 from aiogram.contrib.fsm_storage.memory import MemoryStorage
 
-from config import token
+from tg_bot.config import token
 from neural_network.neural_test import predict_spam
 
 
