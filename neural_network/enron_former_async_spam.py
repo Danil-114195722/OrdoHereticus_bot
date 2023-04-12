@@ -6,14 +6,14 @@ import asyncio
 import aiofiles
 
 from httpcore._exceptions import ReadTimeout
-from googletrans import Translator
+# from googletrans import Translator
 
 
 # путь до папки с проектом "OrdoHereticus_bot"
 PROJECT_PATH = Path(__file__).resolve().parent.parent
 
 DIR_PATH = f'{PROJECT_PATH}/dataset/enron/spam'
-TRANSLATOR = Translator()
+# TRANSLATOR = Translator()
 
 
 async def add_en_ru(spam):
@@ -31,7 +31,7 @@ async def add_en_ru(spam):
                         writer = csv.writer(csv_file)
                         await writer.writerow([1, file_text])
                         print(spam)
-                        await writer.writerow([1, TRANSLATOR.translate(file_text, src='en', dest='ru').text])
+                        # await writer.writerow([1, TRANSLATOR.translate(file_text, src='en', dest='ru').text])
                         break
                     except ValueError:
                         errors += 1
